@@ -1,6 +1,9 @@
 import {
-    Meta
+    Meta,
+    Links
 } from '@remix-run/react'
+import styles from "./styles/index.css"
+
 
 export function meta(){
     return(
@@ -12,19 +15,54 @@ export function meta(){
     )
 }
 
+
+export function links(){
+    return(
+        
+        {
+            rel:'stylesheet',
+            href:'https://necolas.github.io/normalize.css/8.0.1/normalize.css'
+        },
+        {
+            rel:'preconnect',
+            href:'https://fonts.googleapis.com'
+        },
+        {
+            rel:'preconnect',
+            href:'https://fonts.gstatic.com',
+            crossOrigin: "true"
+        },
+        {
+            rel:'stylesheet',
+            href:'https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Outfit:wght@400;700;900&display=swap'
+        },
+        {
+            rel:'stylesheet',
+            href: styles
+        }
+    )
+}
+
 export default function App(){
     return(
         <Document>
-            <h1>Te amo pequeñita</h1>
+            <h1>HOLA MUNDO</h1>
         </Document>
     )
 }
+
+/*
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+*/ 
 
 function Document({children}){
     return(
         <html lang="es">
             <head>
                 <Meta/>
+                <Links/>
             </head>
             <body>
                 {children}
