@@ -17,8 +17,7 @@ export function meta(){
 
 
 export function links(){
-    return(
-        
+    return[
         {
             rel:'stylesheet',
             href:'https://necolas.github.io/normalize.css/8.0.1/normalize.css'
@@ -40,7 +39,8 @@ export function links(){
             rel:'stylesheet',
             href: styles
         }
-    )
+    ]
+        
 }
 
 export default function App(){
