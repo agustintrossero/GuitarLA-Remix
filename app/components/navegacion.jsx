@@ -1,11 +1,10 @@
 import {Link, useLocation} from '@remix-run/react'
 
 const Navegacion = () => {
-    
+
 const location = useLocation()
   return (
-    <div>
-              <nav className="navegacion">
+        <nav className="navegacion">
           <Link
             to="/"
             className={location.pathname === "/" ? "active" : ""}
@@ -23,7 +22,6 @@ const location = useLocation()
             className={location.pathname === "/blog" ? "active" : ""}
             >Blog</Link>
         </nav>
-    </div>
   )
 }
 
