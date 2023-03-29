@@ -1,7 +1,7 @@
 function Tienda() {
   return (
     <div>
-      TIENDA
+      Tienda
     </div>
   )
 }
