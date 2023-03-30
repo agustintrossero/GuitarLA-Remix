@@ -4,8 +4,3 @@ export async function getGuitarras(){
     
     //console.log(process.env.API_URL)
   }
-
-export async function getImagenGuitarra(){
-  const respuesta = await fetch(`${process.env.API_URL}`)
-  return await respuesta.json()
-}
