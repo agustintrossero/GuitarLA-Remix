@@ -16,8 +16,10 @@
 }
 
 .post{
-
+    max-width: 80rem;
+    margin: 0 auto;
 }
+
 .post .contenido{
     padding: 1.5rem;
 }
@@ -27,11 +29,22 @@
     font-size: 2.8rem;
     margin: 0;
 }
+.post .fecha{
+    color: var(--primary);
+    font-size: 1.6rem
+}
 
 .post .resumen{
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
     overflow: hidden;
+}
+
+.post .texto{
+    white-space: pre-wrap;
+}
+.mt-3{
+ margin-top: 3rem;
 }
 

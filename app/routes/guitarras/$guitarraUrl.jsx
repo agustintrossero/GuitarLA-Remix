@@ -44,7 +44,6 @@ function Guitarra   () {
   const guitarra = useLoaderData()
   const {imagen, nombre, descripcion, precio} = guitarra.data[0].attributes
   return (
-    <div>
       <main className="contenedor guitarra">
         <img src={`http://127.0.0.1:1337${imagen.data.attributes.url}`} alt={`Imagen de Guitarra ${nombre}`} className="imagen" />
         <div className="contenido">
@@ -53,7 +52,6 @@ function Guitarra   () {
           <p className="precio">{precio}</p>
         </div>
       </main>
-    </div>
   )
 }
 

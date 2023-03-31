@@ -3,6 +3,13 @@ import {getPosts} from '~/models/posts.server.js'
 import Post from  '~/components/Post'
 import styles from '~/styles/blog.css'
 
+export function meta(){
+  return {
+    title: 'GuitarLA - Nuestro Blog',
+    description: 'Nuestra seleccion de Blogs'
+  }
+}
+
 export function links(){
   return [
     {
