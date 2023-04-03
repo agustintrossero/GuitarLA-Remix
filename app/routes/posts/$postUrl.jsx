@@ -47,7 +47,7 @@ export default function Post() {
   return (
   
     <article className="contenedor post mt-3">
-      <img clasName="imagen" src={`http://127.0.0.1:1337${imagen?.data?.attributes?.url}`} alt={`Imagen de Post ${titulo}`} />
+      <img className="imagen" src={`http://127.0.0.1:1337${imagen?.data?.attributes?.url}`} alt={`Imagen de Post ${titulo}`} />
         <div className="contenido">
             <h3>{titulo}</h3>
             <p className="fecha">{formatearFecha(publishedAt)}</p>
