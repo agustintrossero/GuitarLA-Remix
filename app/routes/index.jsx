@@ -1,10 +1,66 @@
+import { getGuitarras } from '~/models/guitarras.server.js'
+import { getPosts } from '~/models/posts.server.js'
+import { getCursos } from '~/models/cursos.server.js'
+import { useLoaderData } from '@remix-run/react'
+import ListadoGuitarras from '../components/listado-guitarras'
+import ListadoPosts from '../components/listado-posts'
+import Curso from '../components/curso'
+import stylesGuitarras from '~/styles/guitarras.css'
+import stylesBlog from '~/styles/blog.css'
+import stylesCurso from '~/styles/curso.css'
 
+export function meta (){
+
+}
+export function links (){
+  return [
+    {
+      rel: 'stylesheet',
+      href: stylesGuitarras
+    },
+    {
+      rel: 'stylesheet',
+      href: stylesBlog
+    },
+    {
+      rel: 'stylesheet',
+      href: stylesCurso
+    }
+  ]
+}
+
+export async function loader(){
+  const [guitarras, posts, curso] = await Promise.all([
+    getGuitarras(),
+    getPosts(),
+    getCursos()
+  ])
+  //console.log(curso)
+  return{
+    guitarras: guitarras.data, 
+    posts: posts.data,
+    curso: curso.data
+  }
+}
 
 function Index() {
+  const {guitarras, posts, curso} = useLoaderData()
   return (
-    <div>
-      Desde Index
-    </div>
+    <>
+      <main className="contenedor">
+        <ListadoGuitarras
+        guitarras = {guitarras}
+        />
+      </main>
+      <Curso
+        curso = {curso.attributes}
+      />
+      <section className='contenedor'>
+        <ListadoPosts
+            posts = {posts}
+          />
+      </section>
+    </>
   )
 }
 
