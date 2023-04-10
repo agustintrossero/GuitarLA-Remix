@@ -1,7 +1,6 @@
 
 import { useLoaderData} from '@remix-run/react'
 import {getGuitarra} from '~/models/guitarras.server'
-import styles from '~/styles/guitarras.css'
 
 export async function loader({params}){
   const {guitarraUrl} = params
@@ -31,27 +30,31 @@ export function meta({data}){
   }
 }
 
-export function links(){
-  return [
-    {
-      rel:'stylesheet',
-      href:styles
-    }
-  ]
-}
-
 function Guitarra   () {
   const guitarra = useLoaderData()
   const {imagen, nombre, descripcion, precio} = guitarra.data[0].attributes
   return (
-      <main className="contenedor guitarra">
+      <div className="guitarra">
         <img src={`http://127.0.0.1:1337${imagen?.data?.attributes?.url}`} alt={`Imagen de Guitarra ${nombre}`} className="imagen" />
         <div className="contenido">
           <h3>{nombre}</h3>
           <p className="texto">{descripcion}</p>
           <p className="precio">{precio}</p>
+
+          <form action="" className="formulario">
+            <label htmlFor='cantidad'>Cantidad</label>
+            <select name="" id="cantidad">
+              <option value="">-- Seleccione --</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <input type="submit" value="Agregar al carrito" />
+          </form>
         </div>
-      </main>
+      </div>
   )
 }
 
