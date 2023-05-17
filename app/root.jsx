@@ -55,8 +55,24 @@ export default function App(){
 
     const [carrito, setCarrito] = useState([]);
     const agregarCarrito = guitarra => {
-        console.log("agregando....", guitarra);
-        setCarrito([...carrito, guitarra])
+       // console.log("agregando....", guitarra);
+        if (carrito.some(guitarraState => guitarraState.id === guitarra.id)){
+            //some es un metoddo de array que devuelve booleans si cumple la ccondicion
+            // ahora quiero iterar sobre el arreglo e identificar el elemento duplicado para actualizar su cantidad
+            
+            const carritoActualizado = carrito.map(guitarraState =>{
+                if (guitarraState.id === guitarra.id) {
+                    guitarraState.cantidad = guitarra.cantidad
+                }
+                return guitarraState
+            })
+            setCarrito(carritoActualizado)
+            //console.log("actualizaste la cantidad del elemento")
+        } else {
+            // registro nuevo, agregar al carrito
+            setCarrito([...carrito, guitarra])
+        }
+
     }
     return(
         <Document>
