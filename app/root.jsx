@@ -52,7 +52,6 @@ export function links(){
 }
 
 export default function App(){
-
     const [carrito, setCarrito] = useState([]);
     const agregarCarrito = guitarra => {
         if (carrito.some(guitarraState => guitarraState.id === guitarra.id)){
@@ -69,7 +68,6 @@ export default function App(){
     }
 
     const actualizarCantidad = guitarra => {
-        //console.log(guitarra)
         const carritoActualizado = carrito.map(guitarraState => {
             if(guitarraState.id === guitarra.id){
                 guitarraState.cantidad = guitarra.cantidad;
@@ -78,14 +76,21 @@ export default function App(){
         })
         setCarrito(carritoActualizado)
     }
-    
+
+    const eliminarGuitarra = id => {
+        //console.log('ELiminando...', id)
+        const carritoActualizado = carrito.filter(guitarraState => guitarraState.id !== id)
+        setCarrito(carritoActualizado)
+    }
+
     return(
         <Document>
             <Outlet
                 context={{
                     agregarCarrito,
                     carrito,
-                    actualizarCantidad
+                    actualizarCantidad,
+                    eliminarGuitarra
                 }}
             />
         </Document>
