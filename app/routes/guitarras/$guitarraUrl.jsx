@@ -46,7 +46,7 @@ function Guitarra   () {
     }
     const guitarraSeleccionada = {
       id: guitarra.data[0].id,
-      imagen: `http://127.0.0.1:1337${imagen?.data?.attributes?.url}`,
+      imagen: imagen?.data?.attributes?.url,
       nombre,
       precio,
       cantidad
@@ -56,7 +56,7 @@ function Guitarra   () {
   
   return (
       <div className="guitarra">
-        <img src={`http://127.0.0.1:1337${imagen?.data?.attributes?.url}`} alt={`Imagen de Guitarra ${nombre}`} className="imagen" />
+        <img src={imagen?.data?.attributes?.url} alt={`Imagen de Guitarra ${nombre}`} className="imagen" />
         <div className="contenido">
           <h3>{nombre}</h3>
           <p className="texto">{descripcion}</p>
