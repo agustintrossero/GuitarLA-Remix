@@ -5,7 +5,7 @@ export default function Guitarra({guitarra}) {
     //console.log(URL)
   return (
     <div className="guitarra">
-        <img src={`http://127.0.0.1:1337${imagen?.data?.attributes?.formats?.medium.url}`} alt={`Imagen de Guitarra ${nombre}`} />
+        <img src={`http://127.0.0.1:1337${imagen.data.attributes.formats.small.url}`} alt={`Imagen de Guitarra ${nombre}`} />
         <div className="contenido">
             <h3>{guitarra.nombre}</h3>
             <p className="descripcion">{descripcion}</p>
