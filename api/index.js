@@ -567,7 +567,7 @@ function Guitarra() {
     }
     let guitarraSeleccionada = {
       id: guitarra.data[0].id,
-      imagen: `http://127.0.0.1:1337${(_b2 = (_a2 = imagen == null ? void 0 : imagen.data) == null ? void 0 : _a2.attributes) == null ? void 0 : _b2.url}`,
+      imagen: (_b2 = (_a2 = imagen == null ? void 0 : imagen.data) == null ? void 0 : _a2.attributes) == null ? void 0 : _b2.url,
       nombre,
       precio,
       cantidad
@@ -575,7 +575,7 @@ function Guitarra() {
     agregarCarrito(guitarraSeleccionada);
   };
   return /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "guitarra", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("img", { src: `http://127.0.0.1:1337${(_b = (_a = imagen == null ? void 0 : imagen.data) == null ? void 0 : _a.attributes) == null ? void 0 : _b.url}`, alt: `Imagen de Guitarra ${nombre}`, className: "imagen" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("img", { src: (_b = (_a = imagen == null ? void 0 : imagen.data) == null ? void 0 : _a.attributes) == null ? void 0 : _b.url, alt: `Imagen de Guitarra ${nombre}`, className: "imagen" }, void 0, !1, {
       fileName: "app/routes/guitarras/$guitarraUrl.jsx",
       lineNumber: 59,
       columnNumber: 9
@@ -684,10 +684,9 @@ var import_react10 = require("@remix-run/react");
 // app/components/guitarra.jsx
 var import_react9 = require("@remix-run/react"), import_jsx_dev_runtime8 = require("react/jsx-dev-runtime");
 function Guitarra2({ guitarra }) {
-  var _a, _b, _c;
   let { nombre, descripcion, imagen, precio, URL } = guitarra;
   return /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "guitarra", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("img", { src: `http://127.0.0.1:1337${(_c = (_b = (_a = imagen == null ? void 0 : imagen.data) == null ? void 0 : _a.attributes) == null ? void 0 : _b.formats) == null ? void 0 : _c.medium.url}`, alt: `Imagen de Guitarra ${nombre}` }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("img", { src: imagen.data.attributes.formats.small.url, alt: `Imagen de Guitarra ${nombre}` }, void 0, !1, {
       fileName: "app/components/guitarra.jsx",
       lineNumber: 8,
       columnNumber: 9
@@ -1115,7 +1114,7 @@ var import_jsx_dev_runtime13 = require("react/jsx-dev-runtime");
 function post({ post: post2 }) {
   let { titulo, contenido, imagen, URL, publishedAt } = post2;
   return /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("article", { className: "post", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("img", { className: "imagen", src: `http://127.0.0.1:1337${imagen.data.attributes.formats.small.url}`, alt: `Imagen de Post ${titulo}` }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("img", { className: "imagen", src: imagen.data.attributes.formats.small.url, alt: `Imagen de Post ${titulo}` }, void 0, !1, {
       fileName: "app/components/post.jsx",
       lineNumber: 9,
       columnNumber: 9
@@ -1198,7 +1197,7 @@ function Curso({ curso }) {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)("section", { className: "curso", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)("style", { jsx: "true", children: `
                 .curso {
-                   background-image: linear-gradient( to right, rgb(0 0 0 / .65), rgb(0 0 0 / .7) ), url(http://127.0.0.1:1337${imagen.data.attributes.url})
+                   background-image: linear-gradient( to right, rgb(0 0 0 / .65), rgb(0 0 0 / .7) ), url(${imagen.data.attributes.url})
                 }
             ` }, void 0, !1, {
       fileName: "app/components/curso.jsx",
@@ -1391,7 +1390,7 @@ function Post() {
   var _a, _b, _c;
   let post2 = (0, import_react16.useLoaderData)(), { titulo, contenido, imagen, publishedAt } = (_a = post2 == null ? void 0 : post2.data[0]) == null ? void 0 : _a.attributes;
   return /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("article", { className: "post mt-3", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("img", { className: "imagen", src: `http://127.0.0.1:1337${(_c = (_b = imagen == null ? void 0 : imagen.data) == null ? void 0 : _b.attributes) == null ? void 0 : _c.url}`, alt: `Imagen de Post ${titulo}` }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("img", { className: "imagen", src: (_c = (_b = imagen == null ? void 0 : imagen.data) == null ? void 0 : _b.attributes) == null ? void 0 : _c.url, alt: `Imagen de Post ${titulo}` }, void 0, !1, {
       fileName: "app/routes/blog/$postUrl.jsx",
       lineNumber: 40,
       columnNumber: 7
@@ -1462,7 +1461,7 @@ function Blog2() {
 var blog_default3 = Blog2;
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "51350867", entry: { module: "/build/entry.client-R3HW2GKD.js", imports: ["/build/_shared/chunk-SZLBF35E.js", "/build/_shared/chunk-EETRBLDB.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-VPFDGAXU.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !0, hasErrorBoundary: !0 }, "routes/blog": { id: "routes/blog", parentId: "root", path: "blog", index: void 0, caseSensitive: void 0, module: "/build/routes/blog-SAS4E7DL.js", imports: ["/build/_shared/chunk-D5XMEZOQ.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/blog/$postUrl": { id: "routes/blog/$postUrl", parentId: "routes/blog", path: ":postUrl", index: void 0, caseSensitive: void 0, module: "/build/routes/blog/$postUrl-LU54JOWX.js", imports: ["/build/_shared/chunk-R22AXYZC.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/blog/index": { id: "routes/blog/index", parentId: "routes/blog", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/blog/index-YXINFUDR.js", imports: ["/build/_shared/chunk-XGV26RHY.js", "/build/_shared/chunk-R22AXYZC.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/carrito": { id: "routes/carrito", parentId: "root", path: "carrito", index: void 0, caseSensitive: void 0, module: "/build/routes/carrito-MCBPHJOW.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/guitarras": { id: "routes/guitarras", parentId: "root", path: "guitarras", index: void 0, caseSensitive: void 0, module: "/build/routes/guitarras-MXKZAL53.js", imports: ["/build/_shared/chunk-QTOC6O2R.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/guitarras/$guitarraUrl": { id: "routes/guitarras/$guitarraUrl", parentId: "routes/guitarras", path: ":guitarraUrl", index: void 0, caseSensitive: void 0, module: "/build/routes/guitarras/$guitarraUrl-NUEGN3QX.js", imports: ["/build/_shared/chunk-JGUII2H5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/guitarras/index": { id: "routes/guitarras/index", parentId: "routes/guitarras", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/guitarras/index-JCNAQC2W.js", imports: ["/build/_shared/chunk-JGUII2H5.js", "/build/_shared/chunk-CP6OJIFZ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-M46EEH5O.js", imports: ["/build/_shared/chunk-D5XMEZOQ.js", "/build/_shared/chunk-XGV26RHY.js", "/build/_shared/chunk-R22AXYZC.js", "/build/_shared/chunk-QTOC6O2R.js", "/build/_shared/chunk-CP6OJIFZ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/nosotros": { id: "routes/nosotros", parentId: "root", path: "nosotros", index: void 0, caseSensitive: void 0, module: "/build/routes/nosotros-OCAMWIBA.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, hmr: void 0, url: "/build/manifest-51350867.js" };
+var assets_manifest_default = { version: "8d45d525", entry: { module: "/build/entry.client-R3HW2GKD.js", imports: ["/build/_shared/chunk-SZLBF35E.js", "/build/_shared/chunk-EETRBLDB.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-VPFDGAXU.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !0, hasErrorBoundary: !0 }, "routes/blog": { id: "routes/blog", parentId: "root", path: "blog", index: void 0, caseSensitive: void 0, module: "/build/routes/blog-SAS4E7DL.js", imports: ["/build/_shared/chunk-D5XMEZOQ.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/blog/$postUrl": { id: "routes/blog/$postUrl", parentId: "routes/blog", path: ":postUrl", index: void 0, caseSensitive: void 0, module: "/build/routes/blog/$postUrl-DPKCJUW5.js", imports: ["/build/_shared/chunk-R22AXYZC.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/blog/index": { id: "routes/blog/index", parentId: "routes/blog", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/blog/index-TVFHJIUZ.js", imports: ["/build/_shared/chunk-KXBS3ZQJ.js", "/build/_shared/chunk-R22AXYZC.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/carrito": { id: "routes/carrito", parentId: "root", path: "carrito", index: void 0, caseSensitive: void 0, module: "/build/routes/carrito-MCBPHJOW.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/guitarras": { id: "routes/guitarras", parentId: "root", path: "guitarras", index: void 0, caseSensitive: void 0, module: "/build/routes/guitarras-MXKZAL53.js", imports: ["/build/_shared/chunk-QTOC6O2R.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/guitarras/$guitarraUrl": { id: "routes/guitarras/$guitarraUrl", parentId: "routes/guitarras", path: ":guitarraUrl", index: void 0, caseSensitive: void 0, module: "/build/routes/guitarras/$guitarraUrl-YJLGIZYH.js", imports: ["/build/_shared/chunk-JGUII2H5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/guitarras/index": { id: "routes/guitarras/index", parentId: "routes/guitarras", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/guitarras/index-YR46UI72.js", imports: ["/build/_shared/chunk-JGUII2H5.js", "/build/_shared/chunk-FHMVEO7X.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-CFYBK76M.js", imports: ["/build/_shared/chunk-D5XMEZOQ.js", "/build/_shared/chunk-KXBS3ZQJ.js", "/build/_shared/chunk-R22AXYZC.js", "/build/_shared/chunk-QTOC6O2R.js", "/build/_shared/chunk-FHMVEO7X.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/nosotros": { id: "routes/nosotros", parentId: "root", path: "nosotros", index: void 0, caseSensitive: void 0, module: "/build/routes/nosotros-OCAMWIBA.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, hmr: void 0, url: "/build/manifest-8D45D525.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public\\build", future = { unstable_cssModules: !1, unstable_cssSideEffectImports: !1, unstable_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, unstable_vanillaExtract: !1, v2_errorBoundary: !1, v2_meta: !1, v2_routeConvention: !1 }, publicPath = "/build/", entry = { module: entry_server_node_exports }, routes = {
